@@ -73,6 +73,83 @@ int & intvector::operator[](size_t idx)
 	// TODO: insert return statement here
 }
 
+int intvector::operator[](size_t idx) const
+{
+	return data[idx];
+}
+
+void intvector::clear()
+{
+	size = 0;
+}
+
+void intvector::erase(size_t idx)
+{
+	for (int i = 0; i < size - idx; i++)
+	{
+		data[idx + i] = data[(idx + i) + 1];
+	}
+
+	size = size - 1;
+	assert(size > 0);
+}
+
+int intvector::count(size_t idx)
+{
+	int counter = 0;
+	for (int i = 0; i < size - 1; i++)
+	{
+		if (data[idx] == data[i])
+		{
+			counter += 1;
+		}
+	}
+
+	return counter;
+}
+
+void intvector::insert(size_t idx, size_t val)
+{ 
+	assert(idx >= 0);
+	assert(idx < size);
+
+	append(val);
+
+	
+
+	for (int i = 0; i >= size; i--)
+	{
+		int temp = data[i];
+		data[i] = data[i - 1];
+		data[i - 1] = temp;
+	}
+
+}
+
+void intvector::reserve(size_t nCap)
+{
+	if (nCap > capacity)
+	{
+		int *newData = new int[nCap];
+		memcpy(newData, data, sizeof(int) * size);
+		delete[] data;
+		data = newData;
+		capacity = nCap;
+	}
+}
+
+void intvector::compact()
+{
+	if (capacity > size)
+	{
+		int *newData = new int[size];
+		memcpy(newData, data, sizeof(int) * size);
+		delete[] data;
+		data = newData;
+		capacity = size;
+	}
+}
+
 bool intvector::grow(size_t minSize)
 {
 	assert(minSize <= 64000);

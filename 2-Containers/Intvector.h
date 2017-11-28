@@ -22,6 +22,13 @@ public:
 	int Front() const;
 	int Back() const;
 	int & operator[](size_t idx);
+	int operator[](size_t idx) const;
+	void clear();
+	void erase(size_t idx);
+	int count(size_t idx);
+	void insert(size_t idx, size_t val);
+	void reserve(size_t nCap);
+	void compact();
 
 private:
 	bool grow(size_t minSize);
