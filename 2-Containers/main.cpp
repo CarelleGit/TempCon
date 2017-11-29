@@ -1,9 +1,11 @@
 #include <iostream>
 #include "Intvector.h"
+#include "tVector.h"
 using std::cout;
 
 int main()
-{
+{  
+	tVector<int> asdf;
 	intvector nums;
 	nums.append(1);
 	nums.append(4);

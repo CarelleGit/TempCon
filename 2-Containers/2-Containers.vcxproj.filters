@@ -26,5 +26,8 @@
     <ClInclude Include="Intvector.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="tVector.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
