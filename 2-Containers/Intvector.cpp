@@ -1,7 +1,7 @@
 #include "Intvector.h"
 #include <cassert>
 #include <cstring>
-
+#include <iostream>
 intvector::intvector()
 {
 	capacity = 2;
@@ -31,7 +31,7 @@ int & intvector::append(int val)
 	}
 	data[size] = val;
 	++size;
-	return data[size + 1];
+	return data[size - 1];
 	// TODO: insert return statement here
 }
 
@@ -150,6 +150,14 @@ void intvector::compact()
 	}
 }
 
+void intvector::printVector()
+{
+	for (int i = 0; i < size; i++)
+	{
+		std::cout << data[i] << std::endl;
+	}
+}
+
 bool intvector::grow(size_t minSize)
 {
 	assert(minSize <= 64000);
@@ -162,7 +170,7 @@ bool intvector::grow(size_t minSize)
 	//int oldCapacity = capacity;
 	while (capacity < minSize)
 	{
-		capacity * 2;
+		capacity *= 2;
 	}
 
 	int * newData = new int[capacity];

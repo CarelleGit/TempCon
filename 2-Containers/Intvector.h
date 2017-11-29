@@ -29,6 +29,7 @@ public:
 	void insert(size_t idx, size_t val);
 	void reserve(size_t nCap);
 	void compact();
+	void printVector();
 
 private:
 	bool grow(size_t minSize);

@@ -20,6 +20,14 @@ public:
 		delete[] data;
 	}
 
+	void printVector()
+	{
+		for (int i = 0; i < size; i++)
+		{
+			std::cout << data[i] << std::endl;
+		}
+	}
+
 	T &at(size_t idx);
 	T &append(T val);
 
@@ -36,12 +44,14 @@ public:
 
 	void clear();
 	void erase(size_t idx);
-	T count(size_t idx);
-	void insert(size_t idx, size_t val);
+	T count(T idx);
+	void insert(size_t idx, int val);
 	void reserve(size_t nCap);
 	void compact();
 	void eraseRange(size_t idx, size_t idx2);
 
+private:
+	bool grow(size_t minSize);
 };
 
 template<typename T>
@@ -64,7 +74,7 @@ inline T & tVector<T>::append(T val)
 	}
 	data[size] = val;
 	++size;
-	return data[size + 1];
+	return data[size - 1];
 	// TODO: insert return statement here
 }
 
@@ -114,7 +124,7 @@ inline void tVector<T>::pop()
 template<typename T>
 inline T & tVector<T>::operator[](size_t idx)
 {
-	assert(idx >= 0);
+	//assert(idx >= 0);
 	assert(idx < size);
 	return at(idx);
 	// TODO: insert return statement here
@@ -123,6 +133,7 @@ inline T & tVector<T>::operator[](size_t idx)
 template<typename T>
 inline T tVector<T>::operator[](size_t idx) const
 {
+	assert(idx < size);
 	return data[idx];
 }
 
@@ -145,10 +156,10 @@ inline void tVector<T>::erase(size_t idx)
 }
 
 template<typename T>
-inline T tVector<T>::count(size_t idx)
+inline T tVector<T>::count(T idx)
 {
 	T counter = 0;
-	for (int i = 0; i < size - 1; i++)
+	for (size_t i = 0; i < size - 1; i++)
 	{
 		if (data[idx] == data[i])
 		{
@@ -160,16 +171,14 @@ inline T tVector<T>::count(size_t idx)
 }
 
 template<typename T>
-inline void tVector<T>::insert(size_t idx, size_t val)
+inline void tVector<T>::insert(size_t idx, int val)
 {
 	assert(idx >= 0);
-	assert(idx < size);
+	assert(idx <= size);
 
 	append(val);
 
-
-
-	for (int i = 0; i >= size; i--)
+	for (int i = size - 1; i > idx; i--)
 	{
 		T temp = data[i];
 		data[i] = data[i - 1];
@@ -211,4 +220,30 @@ inline void tVector<T>::eraseRange(size_t idx, size_t idx2)
 	{
 		erase(i);
 	}
+}
+
+template<typename T>
+inline bool tVector<T>::grow(size_t minSize)
+{
+	assert(minSize <= 64000);
+
+	if (minSize <= capacity)
+	{
+		return true;
+	}
+
+	//int oldCapacity = capacity;
+	while (capacity < minSize)
+	{
+		capacity *= 2;
+	}
+
+	T * newData = new T[capacity];
+	memcpy(newData, data, sizeof(T) * size);
+
+	delete[] data;
+
+	data = newData;
+
+	return true;
 }
