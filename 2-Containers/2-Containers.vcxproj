@@ -115,8 +115,11 @@
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Algorithms.h" />
     <ClInclude Include="IntLinkList.h" />
     <ClInclude Include="Intvector.h" />
+    <ClInclude Include="Iterator.h" />
+    <ClInclude Include="TemplateLinkList.h" />
     <ClInclude Include="tVector.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

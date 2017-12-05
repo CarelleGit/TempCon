@@ -1,5 +1,6 @@
 #pragma once
 #include <cassert>
+#include "Iterator.h"
 
 template<typename T>
 class tVector
@@ -18,6 +19,16 @@ public:
 	~tVector()
 	{
 		delete[] data;
+	}
+
+	iterator<tVector<T>> begin()
+	{
+		return iterator<tVector<T>>(*this, 0)
+	}
+
+	iterator<tVector<T>> end()
+	{
+		return iterator<tVector<T>>(*this, size); 
 	}
 
 	void printVector()

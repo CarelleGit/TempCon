@@ -24,6 +24,7 @@ void intLinkList::append(int value)
 	intLinkListNode *newNode = new intLinkListNode;
 	newNode->value = value;
 	newNode->next = nullptr;
+	newNode->prev = nullptr;
 	if (head == nullptr)
 	{
 		head = newNode;
@@ -35,6 +36,7 @@ void intLinkList::append(int value)
 		{
 			iter = iter->next;
 		}
+		newNode->prev = iter;
 		iter->next = newNode;
 	}
 }
@@ -131,7 +133,7 @@ int intLinkList::count(int sum) const
 	return count;
 }
 
-int intLinkList::insert(int num, size_t idx)
+void intLinkList::insert(int num, size_t idx)
 {
 	intLinkListNode *iter = head;
 	intLinkListNode *newItem = new intLinkListNode;
@@ -152,7 +154,4 @@ int intLinkList::insert(int num, size_t idx)
 		count++;
 		iter = iter->next;
 	}
-
-
-	return 0;
 }

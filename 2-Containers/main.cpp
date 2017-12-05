@@ -2,11 +2,12 @@
 #include "Intvector.h"
 #include "tVector.h"
 #include "IntLinkList.h"
+#include "Algorithms.h"
 using std::cout;
 
 int main()
 {  
-	///*tVector<int> asdf;
+
 
 	//asdf.append(1);
 	//asdf.append(2);
@@ -19,6 +20,8 @@ int main()
 	nums.append(3);
 	nums.append(4); 
 	//asdf.printVector();
+
+	
 	
 	//int counting = nums.count(4);
 	//cout << counting << "\n";

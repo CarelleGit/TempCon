@@ -35,5 +35,14 @@
     <ClInclude Include="IntLinkList.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="TemplateLinkList.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Algorithms.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Iterator.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

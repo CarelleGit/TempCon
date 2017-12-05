@@ -8,6 +8,7 @@ public:
 	{
 		int value;
 		intLinkListNode *next;
+		intLinkListNode *prev;
 	};
 	intLinkList();
 	~intLinkList();
@@ -23,7 +24,7 @@ public:
 	void clear();
 	void erase(size_t idx);
 	int count(int sum) const ;
-	int insert(int num, size_t idx);
+	void insert(int num, size_t idx);
 
 private:
 
