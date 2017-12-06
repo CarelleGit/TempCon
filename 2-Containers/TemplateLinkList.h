@@ -145,7 +145,7 @@ inline void TemplateLinkList<t>::erase(size_t idx)
 {
 	TemplateLinkList *iter = head;
 	assert(idx <= size());
-	t count = 0;
+	int count = 0;
 	TemplateLinkList *temp = iter;
 	while (iter->next != nullptr && count != idx)
 	{

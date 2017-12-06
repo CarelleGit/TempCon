@@ -115,10 +115,13 @@
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\..\..\Desktop\New folder\TreasureHunt\Queue.h" />
+    <ClInclude Include="..\..\..\..\Desktop\New folder\TreasureHunt\TemplateLinkList.h" />
     <ClInclude Include="Algorithms.h" />
     <ClInclude Include="IntLinkList.h" />
     <ClInclude Include="Intvector.h" />
     <ClInclude Include="Iterator.h" />
+    <ClInclude Include="Stack.h" />
     <ClInclude Include="TemplateLinkList.h" />
     <ClInclude Include="tVector.h" />
   </ItemGroup>
