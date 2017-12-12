@@ -13,6 +13,12 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Header Files\Math">
+      <UniqueIdentifier>{04ca512c-2726-430d-8a37-375ede58bc44}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\HashMap">
+      <UniqueIdentifier>{7613083f-3c1f-450d-b80f-4408ae222281}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -26,32 +32,35 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Intvector.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="tVector.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="IntLinkList.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="TemplateLinkList.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\Math</Filter>
     </ClInclude>
     <ClInclude Include="Algorithms.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="IntLinkList.h">
+      <Filter>Header Files\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Intvector.h">
+      <Filter>Header Files\Math</Filter>
     </ClInclude>
     <ClInclude Include="Iterator.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Stack.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\Math</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\..\Desktop\New folder\TreasureHunt\Queue.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Stack.h">
+      <Filter>Header Files\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="TemplateLinkList.h">
+      <Filter>Header Files\Math</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\..\Desktop\New folder\TreasureHunt\TemplateLinkList.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="HashMap.h">
+      <Filter>Header Files\HashMap</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

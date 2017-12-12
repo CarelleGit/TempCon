@@ -121,6 +121,7 @@
     <ClInclude Include="IntLinkList.h" />
     <ClInclude Include="Intvector.h" />
     <ClInclude Include="Iterator.h" />
+    <ClInclude Include="HashMap.h" />
     <ClInclude Include="Stack.h" />
     <ClInclude Include="TemplateLinkList.h" />
     <ClInclude Include="tVector.h" />
