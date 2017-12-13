@@ -5,9 +5,9 @@ template<typename t>
 class iterator
 {
 public:
-	iterator() = delete;
+	//iterator() = delete;
 
-	iterator(tVector<t>& container, int initialIndex)
+	iterator(t& container, int initialIndex)
 	: owningContainer(container), currentIndex(initialIndex)
 	{
 
@@ -19,20 +19,20 @@ public:
 
 	}
 
-	interator<t>& operator=(const iterator<t>& other)
+	iterator<t>& operator=(const iterator<t>& other)
 	{
 		owningContainer = other.owningContainer;
 		currentIndex = other.currentIndex;
 	}
 
-	bool<t>& operator==(const iterator<t>& other)
+	bool& operator==(const iterator<t>& other)
 	{
 		bool same = owningContainer == other.owningContainer;
 		bool IndexSame = currentIndex == other.currentIndex;
 
 		return same && IndexSame;
 	}
-	bool<t>& operator!=(const iterator<t>& other)
+	bool& operator!=(const iterator<t>& other)
 	{
 		bool same = owningContainer == other.owningContainer;
 		bool IndexSame = currentIndex == other.currentIndex;

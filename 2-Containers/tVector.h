@@ -157,13 +157,14 @@ inline void tVector<T>::clear()
 template<typename T>
 inline void tVector<T>::erase(size_t idx)
 {
+	assert(size > 0);
 	for (int i = 0; i < size - idx; i++)
 	{
 		data[idx + i] = data[(idx + i) + 1];
 	}
 
 	size = size - 1;
-	assert(size > 0);
+
 }
 
 template<typename T>

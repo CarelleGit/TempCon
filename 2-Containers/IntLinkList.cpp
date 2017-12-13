@@ -80,7 +80,7 @@ int intLinkList::front() const
 
 int intLinkList::back() const
 {
-	assert(!empty);
+	assert(!empty());
 	intLinkListNode *iter = head;
 	while (iter->next != nullptr)
 	{
