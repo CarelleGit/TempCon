@@ -126,7 +126,7 @@ inline bool HashMap<t>::findKey(size_t key)
 	}
 	else
 	{
-		false;
+		return false;
 	}
 }
 

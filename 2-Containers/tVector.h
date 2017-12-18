@@ -70,7 +70,7 @@ inline T & tVector<T>::at(size_t idx)
 {
 
 	assert(idx >= 0);
-	assert(idx < size);
+	//assert(idx < size);
 	return data[idx];
 	// TODO: insert return statement here
 }
@@ -136,7 +136,7 @@ template<typename T>
 inline T & tVector<T>::operator[](size_t idx)
 {
 	//assert(idx >= 0);
-	assert(idx < size);
+	//assert(idx < size);
 	return at(idx);
 	// TODO: insert return statement here
 }
@@ -186,7 +186,7 @@ template<typename T>
 inline void tVector<T>::insert(size_t idx, int val)
 {
 	assert(idx >= 0);
-	assert(idx <= size);
+//	assert(idx <= size);
 
 	append(val);
 

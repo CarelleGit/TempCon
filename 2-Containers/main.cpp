@@ -8,10 +8,11 @@ int main()
 {  
 	HashMap<int> mapping;
 
+
+
 	mapping.put(1, 75);
 
-	std::cout << mapping.findKey(0) << std::endl;
-
+	std::cout << mapping.read(1) << std::endl;
 
 	while (true){}
 }
